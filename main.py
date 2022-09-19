@@ -17,13 +17,14 @@ import random
 import os
 import time
 
+# fonction qui nettoie le terminal
 def clear_screen():
     if(os.name == 'posix'):
         os.system('clear')
     else:
         os.system('cls')
 
-# 0 - Générer une chaine de caractère qui contient 4 chiffres aléatoires, c'est votre séquence initiale.
+# Génération d'une chaine de caractère qui contient 4 chiffres aléatoires,la séquence de démarrage du jeu
 n1 = random.randint(0, 9)
 n2 = random.randint(0, 9)
 n3 = random.randint(0, 9)
@@ -32,8 +33,8 @@ Initial_Sequence = str(n1) + str(n2) + str(n3) + str(n4)
 
 score_user = 0
 
-
-while True:    #Initial_Sequence == reponse_utilisateur:
+# algorithme du jeu
+while True:
     Initial_Sequence = Initial_Sequence + str(random.randint(0, 9))
     print(f"Retenez la séquence : {Initial_Sequence}")
     time.sleep(3)
