@@ -14,6 +14,14 @@
 5bis - Si la réponse n'est pas bonne, sortir du programme et afficher : "Mauvaise réponse, la séquence était : xxxx, votre score final : xxxx"
 """
 import random
+import os
+import time
+
+def clear_screen():
+    if(os.name == 'posix'):
+        os.system('clear')
+    else:
+        os.system('cls')
 
 # 0 - Générer une chaine de caractère qui contient 4 chiffres aléatoires, c'est votre séquence initiale.
 n1 = random.randint(0, 9)
@@ -24,7 +32,11 @@ Initial_Sequence = str(n1) + str(n2) + str(n3) + str(n4)
 print(Initial_Sequence)
 
 # 1 - Ajouter un nouveau nombre aléatoire à la fin de votre séquence
-
 for i in range(5):
     Initial_Sequence = Initial_Sequence + str(random.randint(0, 9))
     print(Initial_Sequence)
+
+# 2 - Nettoyer l'écran et affichez "Retenez la séquence" pendant 1 seconde
+print("Retenez la séquence")
+time.sleep(1)
+clear_screen()
