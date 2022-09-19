@@ -15,9 +15,16 @@
 """
 import random
 
+# 0 - Générer une chaine de caractère qui contient 4 chiffres aléatoires, c'est votre séquence initiale.
 n1 = random.randint(0, 9)
 n2 = random.randint(0, 9)
 n3 = random.randint(0, 9)
 n4 = random.randint(0, 9)
 Initial_Sequence = str(n1) + str(n2) + str(n3) + str(n4)
 print(Initial_Sequence)
+
+# 1 - Ajouter un nouveau nombre aléatoire à la fin de votre séquence
+
+for i in range(5):
+    Initial_Sequence = Initial_Sequence + str(random.randint(0, 9))
+    print(Initial_Sequence)
