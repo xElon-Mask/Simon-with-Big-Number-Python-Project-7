@@ -29,14 +29,20 @@ n2 = random.randint(0, 9)
 n3 = random.randint(0, 9)
 n4 = random.randint(0, 9)
 Initial_Sequence = str(n1) + str(n2) + str(n3) + str(n4)
-print(Initial_Sequence)
 
-# 1 - Ajouter un nouveau nombre aléatoire à la fin de votre séquence
-for i in range(5):
+score_user = 0
+
+
+while True:    #Initial_Sequence == reponse_utilisateur:
     Initial_Sequence = Initial_Sequence + str(random.randint(0, 9))
-    print(Initial_Sequence)
-
-# 2 - Nettoyer l'écran et affichez "Retenez la séquence" pendant 1 seconde
-print("Retenez la séquence")
-time.sleep(1)
-clear_screen()
+    print(f"Retenez la séquence : {Initial_Sequence}")
+    time.sleep(3)
+    clear_screen()
+    reponse_utilisateur = input("Quel était le nombre affiché ?")
+    if Initial_Sequence == reponse_utilisateur:
+        score_user += 1
+        print(f"Bonne réponse, votre score est : {score_user}")
+    else:
+        print(f"Mauvaise réponse, la séquence était : {Initial_Sequence}, votre score final : {score_user}")
+        exit()
+    
